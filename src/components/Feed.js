@@ -20,7 +20,7 @@ export default class Feed extends Component {
       .then((expenses) => {
         this.setState({ expenses });
       });
-  };
+  }
 
   openAddExpenseModel = () => this.setState({ isAddExpenseModelOpen: true });
 
@@ -39,14 +39,15 @@ export default class Feed extends Component {
 !
           </Text>
           <Text>Feed Screen!</Text>
-            <Text>Your expenses so far</Text>
-            {
+          <Text>Your expenses so far</Text>
+          {
               this.state.expenses.map(expense => (
                 <View style={{ backgroundColor: 'white', margin: 5 }}>
                   <Text>{expense.description}</Text>
-									<Button title="Go to expense details" onPress={() => this.props.navigation.navigate('FeedDetail', {
-									expense: expense }
-									)} />
+                  <Button
+                    title="Go to expense details"
+                    onPress={() => this.props.navigation.navigate('FeedDetail', { expense })}
+                  />
                 </View>
               ))
             }
@@ -55,7 +56,7 @@ export default class Feed extends Component {
           </View>
           {
             this.state.isAddExpenseModelOpen
-            && <AddExpenseModal closeModal={this.closeModal} username={this.state.username} navigation={this.props.navigation}/>
+            && <AddExpenseModal closeModal={this.closeModal} username={this.state.username} navigation={this.props.navigation} />
           }
         </ScrollView>
       </SafeAreaView>

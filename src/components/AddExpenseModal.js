@@ -105,13 +105,13 @@ export default class AddExpenseModal extends Component {
     this.setState({ amount: value });
   };
 
-	onFriendNameChange = (value) => {
-	  this.setState({ friendName: value });
+  onFriendNameChange = (value) => {
+    this.setState({ friendName: value });
   };
 
-	onFriendEmailChange = (value) => {
-		this.setState({ friendEmail: value });
-	};
+  onFriendEmailChange = (value) => {
+    this.setState({ friendEmail: value });
+  };
 
   getLength = value => value.length;
 
@@ -120,11 +120,10 @@ export default class AddExpenseModal extends Component {
     else if (this.getLength(this.state.amount) === 0) this.setState({ err: 'Amount can not be empty' });
     else if (isNaN(this.state.amount) || this.state.amount < 1) this.setState({ err: 'Amount can only be positive integers' });
     else if (this.getLength(this.state.expense) === 0) this.setState({ err: 'Please choose an expense type!' });
-    else if (this.state.expense === 'Gave to a friend' && this.getLength(this.state.friendName) === 0 || this.getLength(this.state.friendEmail) === 0)
-      this.setState({ err: 'Please fill up your friend details'});
+    else if (this.state.expense === 'Gave to a friend' && this.getLength(this.state.friendName) === 0 || this.getLength(this.state.friendEmail) === 0) this.setState({ err: 'Please fill up your friend details' });
     else {
-			this.setState({ err: '' }, () => this.saveExpense());
-		}
+      this.setState({ err: '' }, () => this.saveExpense());
+    }
   };
 
   render() {

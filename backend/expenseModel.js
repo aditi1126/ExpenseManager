@@ -23,16 +23,16 @@ const Expense = new Schema({
     trim: true,
   },
   friendName: {
-  	type: String,
+    type: String,
     trim: true,
   },
   friendEmail: {
-  	type: String,
+    type: String,
     trim: true,
-		lowercase: true,
+    lowercase: true,
   },
   notificationDate: {
-  	type: String,
+    type: String,
     trim: true,
     default: `${new Date().getDate()}${new Date().getMonth()}${new Date().getFullYear()}`,
   },
