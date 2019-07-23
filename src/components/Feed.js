@@ -15,7 +15,7 @@ export default class Feed extends Component {
     const username = this.props.navigation.getParam('username');
     console.log('comp did mount', username);
     this.setState({ username });
-    fetch('http://localhost:3000/expenses/')
+    fetch('/expenses/')
       .then(res => res.json())
       .then((expenses) => {
         this.setState({ expenses });

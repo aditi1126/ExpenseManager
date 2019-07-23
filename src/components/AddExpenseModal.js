@@ -63,7 +63,7 @@ export default class AddExpenseModal extends Component {
     console.log('save callled', this.getLength(this.state.err));
     {
       this.getLength(this.state.err) === 0
-      && fetch('http://localhost:3000/expenses/add', {
+      && fetch('/expenses/add', {
         method: 'POST',
         headers: {
           Accept: 'application/json',

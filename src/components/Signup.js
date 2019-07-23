@@ -48,7 +48,7 @@ export default class Signup extends Component {
 
 
   registerUser = () => {
-    fetch('http://localhost:3000/users/add', {
+    fetch('/users/add', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

@@ -28,7 +28,7 @@ export default class Login extends Component {
 
 
   validateUser = () => {
-    fetch('http://localhost:3000/users/')
+    fetch('/users/')
       .then(res => res.json())
       .then((users) => {
         const match = users.filter(user => user.username === this.state.username && user.password === this.state.password);
