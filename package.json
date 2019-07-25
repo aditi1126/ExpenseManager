@@ -1,36 +1,32 @@
 {
-  "name": "AwesomeProject",
-  "version": "0.0.1",
-  "private": true,
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "test": "jest",
-    "lint": "eslint *.js **/*.js"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
+  "engines": {
+    "node": "10.7.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "react": "16.8.3",
-    "react-native": "0.59.5",
-    "react-native-gesture-handler": "^1.2.1",
-    "react-native-modal-datetime-picker": "^7.4.2",
-    "react-native-vector-icons": "^6.4.2",
-    "react-navigation": "^3.9.1"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.0",
+    "mongoose": "^5.5.11",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^6.2.1",
+    "nodemon": "^1.19.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/runtime": "^7.4.4",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.8.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.13.0",
-    "jest": "^24.8.0",
-    "metro-react-native-babel-preset": "^0.54.0",
-    "react-test-renderer": "16.8.3"
-  },
-  "jest": {
-    "preset": "react-native"
+    "eslint-plugin-react": "^7.13.0"
   }
 }

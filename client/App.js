@@ -16,15 +16,14 @@ import {
 } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-
-import WelcomeScreen from './src/components/WelcomeScreen';
-import Login from './src/components/Login';
-import Favourites from './src/components/Favourites';
-import Feed from './src/components/Feed';
-import FeedDetail from './src/components/FeedDetail';
-import Profile from './src/components/Profile';
-import Settings from './src/components/Settings';
-import Signup from './src/components/Signup';
+import WelcomeScreen from '../client/src/components/WelcomeScreen';
+import Login from '../client/src/components/Login';
+import Favourites from '../client/src/components/Favourites';
+import Feed from '../client/src/components/Feed';
+import FeedDetail from '../client/src/components/FeedDetail';
+import Profile from '../client/src/components/Profile';
+import Settings from '../client/src/components/Settings';
+import Signup from '../client/src/components/Signup';
 
 // const styles = StyleSheet.create({
 //   container: {

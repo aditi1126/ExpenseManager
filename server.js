@@ -1,6 +1,7 @@
 const express = require('express');
 const cron = require('node-cron');
 const nodemailer = require('nodemailer');
+const path = require("path");
 
 const app = express();
 const bodyParser = require('body-parser');
@@ -21,6 +22,8 @@ const Expenserouter = express.Router();
 app.use('/users', Userrouter); // The router will be added as a middleware and will take control of request starting with path /users
 app.use('/expenses', Expenserouter);
 
+app.use(express.static(path.join(__dirname, "client", "build")));
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -29,7 +32,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-mongoose.connect('mongodb://127.0.0.1:27017/users', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/users', {
   newURLParser: true
 });
 const { connection } = mongoose;
@@ -122,6 +125,11 @@ Expenserouter.route('/add').post((req, res) => {
   }).catch(() => {
     res.status(400).send('adding new expense failed');
   });
+});
+
+//it will only be enacted if the API routes above it don't handle the request.
+app.get("*", (req, res) => {
+	res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 app.listen(PORT, () => {
