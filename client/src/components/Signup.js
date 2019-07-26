@@ -48,7 +48,7 @@ export default class Signup extends Component {
 
 
   registerUser = () => {
-    fetch('/users/add', {
+    fetch('https://node-expense-manager.herokuapp.com/users/add', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

@@ -28,7 +28,7 @@ export default class Login extends Component {
 
 
   validateUser = () => {
-    fetch('/users/')
+    fetch('https://node-expense-manager.herokuapp.com/users/')
       .then(res => res.json())
       .then((users) => {
         const match = users.filter(user => user.username === this.state.username && user.password === this.state.password);

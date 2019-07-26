@@ -63,7 +63,7 @@ export default class AddExpenseModal extends Component {
     console.log('save callled', this.getLength(this.state.err));
     {
       this.getLength(this.state.err) === 0
-      && fetch('/expenses/add', {
+      && fetch('https://node-expense-manager.herokuapp.com/expenses/add', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
